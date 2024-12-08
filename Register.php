@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $LastName = mysqli_real_escape_string($conn, htmlspecialchars($_POST["LastName"]));
     $EMSO = mysqli_real_escape_string($conn, htmlspecialchars($_POST["EMSO"]));
     $Email = mysqli_real_escape_string($conn, htmlspecialchars($_POST["Email"]));
-    $Aktiven = mysqli_real_escape_string($conn, htmlspecialchars($_POST["Aktiven"]));
     $Telefon = mysqli_real_escape_string($conn, htmlspecialchars($_POST["Telefon"]));
+    $hashedemso = hash('sha256', $EMSO);
 
     // Preveri, ali so polja prazna
-    if (empty($FirstName) || empty($LastName) || empty($EMSO) || empty($Email) || empty($Aktiven) || empty($Telefon)) {
+    if (empty($FirstName) || empty($LastName) || empty($EMSO) || empty($Email) || empty($Telefon)) {
         $message = "Vsa polja morajo biti izpolnjena!";
         echo "<script>
         alert('$message');
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Preveri, ali uporabnik že obstaja
         $sql_check = "SELECT * FROM clan WHERE EMSO = ? OR Email = ? OR Telefon = ?";
         $stmt_check = $conn->prepare($sql_check);
-        $stmt_check->bind_param("sss", $EMSO, $Email, $Telefon);
+        $stmt_check->bind_param("sss", $hashedemso, $Email, $Telefon);
         $stmt_check->execute();
         $result_check = $stmt_check->get_result();
 
@@ -59,14 +59,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>";
         } else {
             // Vstavi podatke v bazo
-            $sql = "INSERT INTO clan (Ime, Priimek, EMSO, Email, Aktiven, Telefon) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO clan (Ime, Priimek, EMSO, Email, Telefon) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
 
             if ($stmt === false) {
                 die("Napaka pri pripravi poizvedbe: " . $conn->error);
             }
 
-            $stmt->bind_param("ssissi", $FirstName, $LastName, $EMSO, $Email, $Aktiven, $Telefon);
+            $stmt->bind_param("sssss", $FirstName, $LastName, $hashedemso, $Email, $Telefon);
 
             if ($stmt->execute()) {
                 // Nastavi sporočilo o uspehu
