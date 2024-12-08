@@ -6,4 +6,4 @@ Naj vam organizacija vadb v fitnesu postane enostavna in učinkovita!
 
 Vaša skupina,
 
-Gym
+Felitnis
