@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $FirstName = mysqli_real_escape_string($conn, htmlspecialchars($_POST["FirstName"]));
     $LastName = mysqli_real_escape_string($conn, htmlspecialchars($_POST["LastName"]));
     $EMSO = mysqli_real_escape_string($conn, htmlspecialchars($_POST["EMSO"]));
+    $hashedemso = hash('sha256', $EMSO);
     
     // Preverjanje, ali so polja prazna
     if (empty($FirstName) || empty($LastName) || empty($EMSO)) {
@@ -42,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Napaka pri pripravi poizvedbe: " . $conn->error);
     }
     
-    $stmt->bind_param("sss", $FirstName, $LastName, $EMSO);
+    $stmt->bind_param("sss", $FirstName, $LastName, $hashedemso);
     $stmt->execute();
     
     // Preverite, če je bil uporabnik najden
