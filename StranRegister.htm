@@ -99,6 +99,7 @@
         select:focus {
             border-color: #0b23a9;
             outline: none;
+            border-width: 2px;
         }
 
         .gumb {
@@ -114,6 +115,14 @@
             margin-top: 15px;
             box-sizing: border-box; /* ensures padding doesn't affect width */
             font-family: 'Poppins';
+             border-radius: 10px;
+            padding: 18px;
+            font-weight: bold;
+        }
+        
+        ::placeholder
+        {
+            font-weight: bold;
         }
 
         .gumb:hover {
@@ -148,24 +157,19 @@
         <form method="post" action="Register.php">
             <table class="table2">
                 <tr>
-                    <td class="td1">Ime:</td>
-                    <td><input type="text" name="FirstName" pattern="[A-Ža-ž]{1,13}" required></td>
+                    <td><input type="text" name="FirstName" placeholder="Ime" pattern="[A-Ža-ž]{1,13}" required></td>
                 </tr>
                 <tr>
-                    <td class="td1">Priimek:</td>
-                    <td><input type="text" name="LastName" pattern="[A-Ža-ž]{1,13}" required></td>
+                    <td><input type="text" name="LastName" placeholder="Priimek" pattern="[A-Ža-ž]{1,13}" required></td>
                 </tr>
                 <tr>
-                    <td class="td1">EMŠO:</td>
-                    <td><input type="password" name="EMSO" id="pEMSO" maxlength="13" pattern="[0-9]{13}" required></td>
+                    <td><input type="password" name="EMSO" placeholder="Številka EMŠO" id="pEMSO" maxlength="13" pattern="[0-9]{13}" required></td>
                 </tr>
                 <tr>
-                    <td class="td1">Email:</td>
-                    <td><input type="text" name="Email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required></td>
+                    <td><input type="text" name="Email" placeholder="Elektronski naslov" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required></td>
                 </tr>
                 <tr>
-                    <td class="td1">Telefon:</td>
-                    <td><input type="text" name="Telefon" maxlength="9" pattern="[0-9]{9}" required></td>
+                    <td><input type="text" name="Telefon" placeholder="Telefon" maxlength="9" pattern="[0-9]{9}" required></td>
                 </tr>
                 <tr>
                     <td colspan="2">
