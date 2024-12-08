@@ -265,7 +265,7 @@ if (!isset($_SESSION["prijavljen"]) || $_SESSION["prijavljen"] !== TRUE) {
         <p>
             Tel: 076278902
             |
-            <a href="mailto:Gym@gmail.com?subject=Vprašanje%20o%20vadbi&body=Pozdravljeni,%20rad%20bi%20imel%20več%20informacij%20o%20vadbi.">E-mail: Gym@gmail.com</a>
+            <a href="mailto:Felitnis@gmail.com?subject=Vprašanje%20o%20vadbi&body=Pozdravljeni,%20rad%20bi%20imel%20več%20informacij%20o%20vadbi.">E-mail: Felitnis@gmail.com</a>
         </p>
     </div>
 
