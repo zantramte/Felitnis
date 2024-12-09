@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fitnes - prijava</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
         
-       body, html {
+        body, html {
             margin: 0;
             padding: 0;
             font-family: 'Poppins';
@@ -48,7 +48,7 @@
             border-radius: 5px;
         }
 
-       .input {
+        .input {
             max-width: 400px;
             background: #ffffff;
             margin: 55px auto;
@@ -61,43 +61,41 @@
         input[type="password"], .gumb {
             width: 100%;
             box-sizing: border-box;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+            padding: 12px 10px;
+            border: none;
+            border-bottom: 2px solid #a2a2a2;
             font-size: 1rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-family: 'Poppins';
-            background-color: #f5f4f4;
-            border: 2px solid #CCCCCC;
-            transition: all 0.3s ease;
+            background-color: transparent;
+            transition: border-color 0.3s ease;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border-color: #0020d2;
+            border-bottom-color: #003cbc;
             outline: none;
         }
 
         ::placeholder {
             font-weight: bold;
-            color: #9E9E9E;
+            color: #a2a2a2;
         }
-
         
-        .loginText
-        {
+            input[type="text"]:focus::placeholder,
+            input[type="password"]:focus::placeholder {
+            color: #003cbc; /* Nova barva za placeholder ob fokusu */
+            }
+
+        .loginText {
             color: #003cbc;
         }
 
         .table2 {
             width: 100%;
-            border-spacing: 20px 15px; /* Dodan razmik med vrsticami */
+            border-spacing: 20px 15px;
         }
 
-        .table2 td {
-            text-align: left;
-        }
-    
         .gumb {
             background: #003cbc;
             color: #ffffff;
