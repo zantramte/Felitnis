@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,12 +7,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
         
-        body {
+        body, html {
             margin: 0;
             padding: 0;
             font-family: 'Poppins';
-            color: #333;
             background: #497ae1;
+            color: #333;
         }
 
         h1 {
@@ -27,6 +27,7 @@
             font-weight: bold;
         }
 
+        /* Glava in navigacija */
         .linki {
             text-align: center;
             background: #003cbc;
@@ -48,23 +49,12 @@
         }
 
         .input {
-    max-width: 400px;
-    background: #ffffff;
-    margin: 55px auto;
-    padding: 20px 40px; /* Povečan notranji odmik z leve in desne */
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-        
-        .registracijaText {
-            color: #003cbc;
-        }
-
-        .table2 {
-            width: 100%;
-            border-spacing: 10px 15px;
-            text-align: left;
+            max-width: 400px;
+            background: #ffffff;
+            margin: 55px auto;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"],
@@ -92,33 +82,40 @@
             color: #a2a2a2;
         }
         
-        input[type="text"]:focus::placeholder,
-input[type="password"]:focus::placeholder {
-    color: #003cbc; /* Nova barva za placeholder ob fokusu */
-}
+            input[type="text"]:focus::placeholder,
+            input[type="password"]:focus::placeholder {
+            color: #003cbc; /* Nova barva za placeholder ob fokusu */
+            }
+
+        .registracijaText {
+            color: #003cbc;
+            margin-bottom: 5px;
+        }
+
+        .table2 {
+            width: 100%;
+            border-spacing: 20px 15px;
+        }
 
         .gumb {
-            width: 100%;
             background: #003cbc;
             color: #ffffff;
-            font-size: 1rem;
-            padding: 10px;
-            border-radius: 5px;
             border: none;
             cursor: pointer;
             transition: background 0.3s ease;
-            margin-top: 15px;
+            text-align: center;
             font-family: 'Poppins';
             border-radius: 10px;
             padding: 18px;
             font-weight: bold;
+            margin-top: 15px;
         }
 
         .gumb:hover {
             background: #00116f;
         }
 
-        /* Za manjše zaslone */
+        /* Za mobilne naprave */
         @media screen and (max-width: 480px) {
             .linki a {
                 font-size: 1rem;
@@ -130,15 +127,15 @@ input[type="password"]:focus::placeholder {
 
             .input {
                 padding: 15px 20px;
-                margin: 25px 20px;
+                margin: 50px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="linki">
-        <a class="domov" href="/">Domov</a>
-        <a class="reglog" href="StranLogin.htm">Prijava</a>
+        <a href="/">Domov</a>
+        <a href="StranLogin.htm">Prijava</a>
     </div>
 
     <div class="input">
