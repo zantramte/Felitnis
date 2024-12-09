@@ -4,6 +4,8 @@ V okviru skupinskega dela na spletni aplikaciji za predmet Tehnologija programsk
 
 Naj vam organizacija vadb v fitnesu postane enostavna in učinkovita!
 
+Spletno stran lahko takoj preizkusite tukaj: https://tpofitnes.com
+
 Vaša skupina,
 
-Felitnis
+Telifnis
